@@ -6,9 +6,8 @@ Version of the Pasapalabra game **_created with HTML, CSS and JavaScript._**
 ---
 
 ### How it works
-- Download the repository and **keep all the files in the same folder**.
-- To start the game **open in a web browser** the file **index.html**
-- Once opened **click on play to start game**
+- Open the demo version [here](https://marioterron157.github.io/pasapalabra/)
+- Once opened click on **Jugar** to start game
 
 ![Click play to start game]()
 
@@ -22,7 +21,9 @@ Version of the Pasapalabra game **_created with HTML, CSS and JavaScript._**
 
 ![Colors letters]()
 
-- **Game finished**, the correct results are shown.
+- If the countdown arrives to **0** the game ends.
+- When the **game is finished**, the correct results are shown.
+
 
 ![Game Finished]()
 
