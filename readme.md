@@ -1,5 +1,5 @@
 ## Pasapalabra Game
-Version of the Pasapalabra game **_created with HTML, CSS and JavaScript._**
+Pasapalabra game made with **CSS, HTML and JS** in the Skylabcoders Web Development course.
 
 ---
 
