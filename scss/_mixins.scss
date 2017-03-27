@@ -1,0 +1,43 @@
+//-----------------------------------------------------------------------------
+//								$MIXINS
+//-----------------------------------------------------------------------------
+
+
+@mixin on-circle($nb-items, $s-circle, $s-item) {
+	position: relative;
+	width: $s-circle;
+	height: $s-circle;
+	border-radius: 50%;
+	padding: 0;
+	list-style: none;
+
+	> * {
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: $s-item;
+		height: $s-item;
+		margin: -($s-item / 2);
+
+		$rot: 270; 									// Rotation angle for the current item
+		$angle: (360 / $nb-items);					// Angle between two items
+
+		@for $i from 1 through $nb-items {
+			&:nth-of-type(#{$i}) {
+				transform: rotate($rot * 1deg) translate($s-circle / 2) rotate($rot * -1deg);
+            }
+
+			// Increments the `$rot` variable for next item
+			$rot: $rot + $angle;
+        }
+    }
+}
+
+
+@mixin wrapper($width: 90%, $max-width: none) {
+	width: $width;
+	max-width: $max-width;
+	margin-left: auto;
+	margin-right: auto;
+}

@@ -1,0 +1,50 @@
+//-----------------------------------------------------------------------------
+//								$VARIABLES
+//-----------------------------------------------------------------------------
+
+
+// Colors
+// -----------------------------------------------------------------------------
+
+$c-white:				    #fff;
+$c-white-darker:			darken($c-white, 5%);
+
+$c-base-alt:				#ffb03b;
+$c-base-alt-darker:			#b64926;
+
+$c-base:					#0074d9;
+$c-base-darker:				#004b8d;
+
+$c-success:					#9ee379;
+$c-success-darker:			#4caf50;
+
+$c-failure:					#b9121b;
+$c-failure-darker:			#8e001c;
+
+$c-bg:						#5391fa;
+
+$c-red:						#d90000;
+
+
+// Sizes
+// -----------------------------------------------------------------------------
+
+$s-item:				 	2.25em;
+$s-circle: 					$s-item * 10;
+
+$s-item-mobile:				1.25em;
+$s-circle-mobile: 			$s-item * 9.5;
+
+$h-scoreboard: 				$s-item * 3;
+$w-scoreboard: 				$s-item * 5;
+
+$s-timer:				 	$s-item * 1.25;
+
+$h-score: 					$s-item * .75;
+$w-score: 					$s-item * 1.25;
+
+
+// Others
+// -----------------------------------------------------------------------------
+
+$nb-items: 25;

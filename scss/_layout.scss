@@ -1,0 +1,318 @@
+/* -----------------------------------------------------------------------------
+ *								$LAYOUT
+ * ----------------------------------------------------------------------------- */
+
+body {
+	position: relative;
+	background-color: $c-bg;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.25rem;
+	font-weight: 900;
+}
+
+section {
+	@media (min-width: 54.75em) {
+		display: flex;
+		height: 95vh;
+	 }
+}
+
+.hidden {
+	display: none;
+}
+
+/* Circle
+ * ----------------------------------------------------------------------------- */
+.circle-container {
+	width: 100%;
+	padding-top: 2em;
+
+	@media (min-width: 54.75em) {
+		position: relative;
+		width: 50%;
+		height: 100%;
+		padding-top: 0;
+	 }
+}
+
+.circle {
+	@include on-circle($nb-items, $s-circle-mobile, $s-item-mobile);
+	left: 50%;
+	transform: translateX(-50%);
+
+	@media (min-width: 54.75em) {
+		@include on-circle($nb-items, $s-circle, $s-item);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: 0;
+		transform: translate(-50%, -50%);
+	 }
+
+	.item {
+		display: block;
+		width: $s-item;
+		height: $s-item;
+		transition: all .3s ease-in-out;
+		border: 2px solid $c-white;
+		border-radius: 50%;
+		background-image: radial-gradient(circle, $c-base, $c-base-darker);
+		color: $c-white;
+		line-height: $s-item;
+		text-align: center;
+		text-decoration: none;
+		cursor: default;
+
+		&--success {
+			background-image: radial-gradient(circle, $c-success, $c-success-darker);
+		}
+
+		&--failure {
+			background-image: radial-gradient(circle, $c-failure, $c-failure-darker);
+		}
+	}
+}
+
+/* Scoreboard
+ * ----------------------------------------------------------------------------- */
+.scoreboard {
+	margin: 0 0 1em 2em;
+	padding: 0;
+	list-style: none;
+
+	@media (min-width: 54.75em) {
+		position: absolute;
+		bottom: 0;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	 }
+
+
+	.timer {
+		display: block;
+		width: $s-timer;
+		height: $s-timer;
+		border: 2px solid $c-white;
+		border-radius: 50%;
+		background-image: radial-gradient(circle, $c-base, $c-base-darker);
+		color: $c-white;
+		font-weight: 900;
+		line-height: $s-timer;
+		text-align: center;
+		text-decoration: none;
+		cursor: default;
+	}
+
+	.score {
+		display: block;
+		width: $w-score;
+		height: $h-score;
+		margin-top: .5em;
+		border: 2px solid $c-white;
+		background-image: radial-gradient(circle, $c-base, $c-base-darker);
+		color: $c-white;
+		font-weight: 900;
+		line-height: $h-score;
+		text-align: center;
+		text-decoration: none;
+		cursor: default;
+	}
+}
+
+/* Title
+ * ----------------------------------------------------------------------------- */
+.title-container {
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	transform: translate(-50%, -25%);
+
+	@media (min-width: 54.75em) {
+		top: 50%;
+		margin: 0;
+		transform: translate(-50%, -50%);
+	 }
+
+	.title {
+		display: none;
+
+		@media (min-width: 54.75em) {
+			display: block;
+			color: $c-white;
+			font-size: 2.5rem;
+		 }
+	}
+}
+
+/* Controls
+ * ----------------------------------------------------------------------------- */
+.controls-container {
+	width: 100%;
+	padding: 2em 0;
+
+	@media (min-width: 54.75em) {
+		position: relative;
+		width: 50%;
+		height: 100%;
+
+		padding: 0;
+	 }
+
+	.icon-close {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		color: $c-red;
+		cursor: pointer;
+	 }
+
+	.btn {
+		display: inline-block;
+		padding: .25em .5em;
+		border: 2px solid $c-white;
+		border-radius: 3px;
+		background-color: $c-base;
+		color: $c-white;
+		font-weight: 900;
+		line-height: $h-score;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		cursor: pointer;
+
+		&:hover {
+			background-color: $c-base-darker;
+		}
+
+		&--green {
+			background-color: $c-success;
+
+			&:hover {
+				background-color: $c-success-darker;
+			}
+		}
+	}
+}
+
+/* New Game
+ * ----------------------------------------------------------------------------- */
+.ng-controls {
+	@include wrapper(80%);
+
+	@media (min-width: 54.75em) {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: 0;
+		transform: translate(-50%, -50%);
+	 }
+
+	.btn {
+		margin-top: 1em;
+	}
+
+	h4 {
+		color: $c-white;
+		text-transform: uppercase;
+	}
+
+	p {
+		margin-top: 0;
+		margin-right: auto;
+		margin-left: auto;
+		color: $c-white;
+		font-size: .9rem;
+	}
+}
+
+/* Questions
+ * ----------------------------------------------------------------------------- */
+.question-controls {
+	@include wrapper(80%);
+
+	@media (min-width: 54.75em) {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 90%;
+		margin: 0;
+		transform: translate(-50%, -50%);
+	 }
+
+
+	input {
+		height: 45.75px;
+		border: 0;
+		border-radius: 3px;
+	}
+
+	.definition, {
+		margin-top: 0;
+		color: $c-white;
+		font-size: 1rem;
+	}
+
+	.hint {
+		color: $c-white;
+		font-size: 1.75rem;
+	}
+}
+
+/* Play Again
+ * ----------------------------------------------------------------------------- */
+.pa-controls {
+	@include wrapper(80%);
+
+	@media (min-width: 54.75em) {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: 0;
+		transform: translate(-50%, -50%);
+		text-align: center;
+	 }
+
+	.title {
+		margin-bottom: 0;
+		color: $c-white;
+		font-size: 1.5rem;
+		text-transform: uppercase;
+	}
+
+	.subtitle {
+		margin-top: 0;
+		color: $c-white;
+		text-transform: uppercase;
+	}
+}
+
+/* Footer
+ * ----------------------------------------------------------------------------- */
+footer {
+	width: 50%;
+	height: 5vh;
+	margin: 0 auto;
+	text-align: center;
+
+	a,
+	p {
+		color: $c-white;
+		font-size: .875rem;
+		font-weight: 400;
+	}
+
+	a {
+		font-weight: 600;
+		text-decoration: none;
+
+		&:hover {
+			color: $c-white-darker;
+		}
+	}
+
+	i {
+		color: $c-red;
+	}
+}
