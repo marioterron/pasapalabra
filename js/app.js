@@ -1,4 +1,6 @@
-// Array of words
+// Variables
+// -----------------------------------------------------------------------------
+
 var words = [
 	new Word(0, 'A', 'Empieza por A:', ' Relato breve de un acontecimiento extraño, curioso o divertido, generalmente ocurrido a la persona que lo cuenta.', 'Anecdota'),
 	new Word(1, 'B', 'Empieza por B:', ' Pasta dulce y esponjosa, hecha con harina, huevos, levadura y otros ingredientes, que puede tener distintas formas', 'Bollo'),
@@ -27,6 +29,9 @@ var words = [
 	new Word(24, 'Z', 'Contiene la Z:', ' Que es tonto o tiene poca rapidez mental.', 'Pazguato')
 ];
 
+// Functions
+// -----------------------------------------------------------------------------
+
 function Word(idNumber, letter, hint, definition, word, correct) {
 	this.idNumber = idNumber;
 	this.letter = letter;
@@ -40,6 +45,7 @@ function showDefinition(pos) {
 	document.getElementById('js--hint').innerHTML = words[pos].hint;
 	document.getElementById('js--definition').innerHTML = words[pos].definition;
 }
+
 var remainingWords = 25;
 function checkAnswer(pos) {
 	var userAnswer = document.getElementById('js--user-answer').value.toLowerCase();
@@ -63,16 +69,6 @@ function pasapalabra(pos) {
 
 }
 
-function showUserScore() {
-	var counter = 0;
-	for (i = 0; i < words.length; i++) {
-		if (words[i].correct == true) {
-			counter++;
-		}
-	}
-	return "Has conseguido un total de " + counter + " aciertos.";
-}
-
 function continuePlaying() {
 	if (count != 25) {
 		$("#js--user-answer").val("");
@@ -80,6 +76,25 @@ function continuePlaying() {
 	} else {
 		endGame();
 	}
+}
+
+var seconds;
+var temp;
+function countdown() {
+	seconds = 	document.getElementById('js--timer').innerHTML;
+	seconds = parseInt(seconds, 10);
+
+	if (seconds == 1 ) {
+	  temp = document.getElementById('js--timer');
+	  temp.innerHTML = 0;
+	  endGame();
+	  return;
+	}
+
+	seconds--;
+	temp = document.getElementById('js--timer');
+	temp.innerHTML = seconds;
+	timeoutMyOswego = setTimeout(countdown, 1000);
 }
 
 function endGame() {
@@ -90,28 +105,22 @@ function endGame() {
 	$("#js--close").addClass("hidden")
 }
 
-var seconds;
-var temp;
-  function countdown() {
-    seconds = 	document.getElementById('js--timer').innerHTML;
-    seconds = parseInt(seconds, 10);
+function showUserScore() {
+	var counter = 0;
+	for (i = 0; i < words.length; i++) {
+		if (words[i].correct == true) {
+			counter++;
+		}
+	}
+	return "Has conseguido un total de " + counter + " aciertos.";
+}
 
-    if (seconds == 1) {
-      temp = document.getElementById('js--timer');
-      temp.innerHTML = 0;
-	  endGame();
-      return;
-    }
-
-    seconds--;
-    temp = document.getElementById('js--timer');
-    temp.innerHTML = seconds;
-    timeoutMyOswego = setTimeout(countdown, 1000);
-  }
+// Main Program
+// ----------------------------------------------------------------------------- */
 
 
-//Main program
-var count = 0;
+// New game
+var count = 0;												// Counter for answered words
 $("#js--new-game").click (function(){
 	$("#js--ng-controls").addClass("hidden");
 	$("#js--question-controls").removeClass("hidden");
@@ -120,20 +129,42 @@ $("#js--new-game").click (function(){
 	countdown();
 });
 
+// Send the answer
 $("#js--send").click (function(){
 	checkAnswer(count);
 	continuePlaying();
 });
 
+// Key bindings for send the answer
+$("#js--question-controls").keypress(function(event){
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '13'){
+		checkAnswer(count);
+		continuePlaying();
+    }
+});
+
+// Skip the word
 $("#js--pasapalabra").click (function(){
  	pasapalabra(count);
 	continuePlaying();
 });
 
+// Key bindings for skip thw word
+$("#js--question-controls").keypress(function(event){
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '32'){
+		pasapalabra(count);
+		continuePlaying();
+    }
+});
+
+// Play again
 $("#js--pa").click (function(){
  	location.reload()
 });
 
+// End the game
 $("#js--close").click (function(){
  	endGame();
 });
