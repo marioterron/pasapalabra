@@ -1,7 +1,7 @@
 [![HTML5 & CSS3 Standard](https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png)](http://www.w3.org/)  [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
-## Pasapalabra Game
-Pasapalabra game made with **CSS, HTML and JS** in the Skylabcoders Web Development course.
+# Pasapalabra
+ The Pasapalabra game made with **CSS, HTML and JS** in the Skylabcoders Web Development course, based on the successful television contest.
 
 ---
 
@@ -11,9 +11,10 @@ Pasapalabra game made with **CSS, HTML and JS** in the Skylabcoders Web Developm
 
 ![Click play to start game](https://github.com/MarioTerron157/pasapalabra/blob/master/img/1.jpeg)
 
-- Read the sentence under the letters and **write in the blank box the answer**.
+- Read the sentence under the letters and **_write in the blank box the answer_**.
 - Press **Enviar** to send the answer.
-- If you don't know the answer, press on **Pasapalabra** and you **_can answer later_**.
+- If you don't know the answer, press on **Pasapalabra** and you **_skip the word for answer later_**.
+- Also you cant click **enter** to send the answer and click **space** for skip the word.
 
 ![Sentence and answer](https://github.com/MarioTerron157/pasapalabra/blob/master/img/5.jpeg)
 
@@ -26,6 +27,6 @@ Pasapalabra game made with **CSS, HTML and JS** in the Skylabcoders Web Developm
 
 ![Countdown and words remaining](https://github.com/MarioTerron157/pasapalabra/blob/master/img/2.jpeg)
 
-- When the **game is finished**, the correct results are shown.
+- When the **_game is finished_**, the score are shown.
 
 ![Game Finished](https://github.com/MarioTerron157/pasapalabra/blob/master/img/4.jpeg)
