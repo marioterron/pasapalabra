@@ -6,8 +6,8 @@ Pasapalabra game made with **CSS, HTML and JS** in the Skylabcoders Web Developm
 ---
 
 ### How it works
-- Open the demo version [here](https://marioterron157.github.io/pasapalabra/).
-- Once opened click on **Jugar** to start game.
+- Go to the demo version [here](https://marioterron157.github.io/pasapalabra/).
+- Once there click on **Jugar** to start game.
 
 ![Click play to start game](https://github.com/MarioTerron157/pasapalabra/blob/master/img/1.jpeg)
 
@@ -22,14 +22,10 @@ Pasapalabra game made with **CSS, HTML and JS** in the Skylabcoders Web Developm
 ![Colors letters](https://github.com/MarioTerron157/pasapalabra/blob/master/img/3.jpeg)
 
 - If the countdown arrives to **0** the game ends.
+- You can see the countdown and the words remaining in the bottom corner.
+
+![Countdown and words remaining](https://github.com/MarioTerron157/pasapalabra/blob/master/img/2.jpeg)
+
 - When the **game is finished**, the correct results are shown.
 
-
 ![Game Finished](https://github.com/MarioTerron157/pasapalabra/blob/master/img/4.jpeg)
-
-### How to change the words for others
-- In the file **app.js** _(it is inside the folder js)_, from **line 3 to 27 are the words**, to put others only have to be replaced by the new words.
-- The order of each word should be:
-```javascript
-    new Word (idNumber, 'letter', ,'hint', 'definition', 'word')
-```
