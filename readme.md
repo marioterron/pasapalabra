@@ -29,4 +29,4 @@
 
 - When the **_game is finished_**, the score are shown.
 
-![Game Finished](https://github.com/MarioTerron157/pasapalabra/blob/master/img/05.jpeg)
+![Game Finished](https://github.com/MarioTerron157/pasapalabra/blob/master/img/05.jpg)
