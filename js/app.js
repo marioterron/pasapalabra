@@ -47,6 +47,7 @@ function showDefinition(pos) {
 }
 
 var remainingWords = 25;
+
 function checkAnswer(pos) {
 	var userAnswer = $("#js--user-answer").val().toLowerCase();
 	if (userAnswer == words[pos].word.toLowerCase()) {
@@ -80,14 +81,15 @@ function continuePlaying() {
 
 var seconds;
 var temp;
+
 function countdown() {
 	seconds = $("#js--timer").html();
 	seconds = parseInt(seconds, 10);
-	if (seconds == 1 ) {
-	  temp = $("#js--timer");
-	  temp.innerHTML = 0;
-	  endGame();
-	  return;
+	if (seconds == 1) {
+		temp = $("#js--timer");
+		temp.innerHTML = 0;
+		endGame();
+		return;
 	}
 	seconds--;
 	temp = $("#js--timer");
@@ -118,8 +120,8 @@ function showUserScore() {
 // ----------------------------------------------------------------------------- */
 
 // New game
-var count = 0;												// Counter for answered words
-$("#js--new-game").click (function(){
+var count = 0; // Counter for answered words
+$("#js--new-game").click(function() {
 	$("#js--ng-controls").addClass("hidden");
 	$("#js--question-controls").removeClass("hidden");
 	$("#js--close").removeClass("hidden");
@@ -128,41 +130,41 @@ $("#js--new-game").click (function(){
 });
 
 // Send the answer
-$("#js--send").click (function(){
+$("#js--send").click(function() {
 	checkAnswer(count);
 	continuePlaying();
 });
 
 // Key bindings for send the answer
-$("#js--question-controls").keypress(function(event){
-    var keycode = (event.keyCode ? event.keyCode : event.which);
-    if(keycode == "13"){
+$("#js--question-controls").keypress(function(event) {
+	var keycode = (event.keyCode ? event.keyCode : event.which);
+	if (keycode == "13") {
 		checkAnswer(count);
 		continuePlaying();
-    }
+	}
 });
 
 // Skip the word
-$("#js--pasapalabra").click (function(){
- 	pasapalabra(count);
+$("#js--pasapalabra").click(function() {
+	pasapalabra(count);
 	continuePlaying();
 });
 
-// Key bindings for skip thw word
-$("#js--question-controls").keypress(function(event){
-    var keycode = (event.keyCode ? event.keyCode : event.which);
-    if(keycode == "32"){
+// Key bindings for skip the word
+$("#js--question-controls").keypress(function(event) {
+	var keycode = (event.keyCode ? event.keyCode : event.which);
+	if (keycode == "32") {
 		pasapalabra(count);
 		continuePlaying();
-    }
+	}
 });
 
 // Play again
-$("#js--pa").click (function(){
- 	location.reload()
+$("#js--pa").click(function() {
+	location.reload()
 });
 
 // End the game
-$("#js--close").click (function(){
- 	endGame();
+$("#js--close").click(function() {
+	endGame();
 });
